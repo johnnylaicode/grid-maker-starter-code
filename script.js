@@ -23,22 +23,22 @@ function removeC() {
 }
 
 // Sets global variable for selected color
-function selected(){
+function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
     console.log(colorSelected);
 }
 
+// Fill all uncolored cells
+function fillU(){
+    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+}
+
 // Fill all cells
-function fill(){
+function fillAll(){
     alert("Clicked Fill All"); // Replace this line with your code.
 }
 
 // Clear all cells
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
-}
-
-// Fill all uncolored cells
-function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
 }
