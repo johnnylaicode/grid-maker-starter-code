@@ -35,7 +35,11 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    rowsAll = document.querySelectorAll("tr"); // get the list of all rows
+    for (let i = 0; i < numRows; i++) {
+        rowsAll[i].removeChild(rowsAll[i].lastElementChild); // remove last column of each row
+    }
+    numCols -= 1; // update number of columns
 }
 
 // Set global variable for selected color
