@@ -1,4 +1,4 @@
-#Assignment 3 - Grid Maker
+# Assignment 3 - Grid Maker
 Group member:
 
 Alima Asanbaeva (myself) - aikolok
