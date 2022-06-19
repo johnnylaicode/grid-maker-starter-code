@@ -10,7 +10,9 @@ function addR() {
         numCols += 1; // initial increase of column number
     }
     for (let i = 0; i < numCols; i++) {
-        row.appendChild(document.createElement("td")); // add column(s)
+        let child = document.createElement("td");
+        child.setAttribute("onclick", "changeColor(this)"); 
+        row.appendChild(child); 
     }
     document.getElementById('grid').appendChild(row); // add the row to the table
     numRows += 1; // update number of rows
@@ -20,7 +22,9 @@ function addR() {
 function addC() {
     rowsAll = document.querySelectorAll("tr"); // get list of all rows
     for (let i = 0; i < numRows; i++) {
-        rowsAll[i].appendChild(document.createElement("td")); // add column to each row
+        let child = document.createElement("td");
+        child.setAttribute("onclick", "changeColor(this)"); 
+        rowsAll[i].appendChild(child); // add column to each row
     }
     numCols += 1; // update number of columns
 }
@@ -63,4 +67,9 @@ function fillAll(){
 // Clear all cells
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
+}
+
+// Changes the color of the cell when it is clicked
+function changeColor(cell) {
+    cell.style.backgroundColor = colorSelected;
 }
