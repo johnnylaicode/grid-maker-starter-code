@@ -3,4 +3,4 @@ Group member:
 
 Alima Asanbaeva (myself) - aikolok
 
-Link to Website
+[Link to Website](https://aikolok.github.io/grid-maker/)
