@@ -12,7 +12,7 @@ function addR() {
     for (let i = 0; i < numCols; i++) {
         row.appendChild(document.createElement("td")); // add column(s)
     }
-    document.querySelector("table").appendChild(row); // add the row to the table
+    document.getElementById('grid').appendChild(row); // add the row to the table
     numRows += 1; // update number of rows
 }
 
@@ -27,7 +27,10 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    table = document.getElementById("grid"); // select the table
+    rowsAll = document.querySelectorAll("tr"); // get the list of all rows
+    table.removeChild(rowsAll[rowsAll.length - 1]); // delete the last row
+    numRows -= 1; // update number of rows
 }
 
 // Remove a column
