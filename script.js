@@ -4,8 +4,16 @@ let numCols = 0;
 let colorSelected; 
 
 // Add a row
-function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+function addR() { 
+    let row = document.createElement("tr"); // create a new row
+    if (numRows == 0 && numCols == 0) {
+        numCols += 1; // initial increase of column number
+    }
+    for (let i = 0; i < numCols; i++) {
+        row.appendChild(document.createElement("td")); // add column(s)
+    }
+    document.querySelector("table").appendChild(row); // add the row to the table
+    numRows += 1; // update number of rows
 }
 
 // Add a column
