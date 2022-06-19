@@ -18,7 +18,11 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    rowsAll = document.querySelectorAll("tr"); // get list of all rows
+    for (let i = 0; i < numRows; i++) {
+        rowsAll[i].appendChild(document.createElement("td")); // add column to each row
+    }
+    numCols += 1; // update number of columns
 }
 
 // Remove a row
