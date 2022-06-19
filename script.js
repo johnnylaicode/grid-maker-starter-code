@@ -73,7 +73,10 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    cellsAll = document.querySelectorAll("td");
+    for (let i = 0; i < cellsAll.length; i++) {
+        cellsAll[i].style.backgroundColor = "white";   
+    }
 }
 
 // Changes the color of the cell when it is clicked
