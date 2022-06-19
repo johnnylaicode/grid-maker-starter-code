@@ -1,2 +1,6 @@
-# grid-maker-starter-code
-Starter code for Assignment 3 - Grid Maker.
+#Assignment 3 - Grid Maker
+Group member:
+
+Alima Asanbaeva (myself) - aikolok
+
+Link to Website
