@@ -12,6 +12,7 @@ function addR() {
     for (let i = 0; i < numCols; i++) {
         let child = document.createElement("td");
         child.setAttribute("onclick", "changeColor(this)"); 
+        child.setAttribute("style", "background-color:White;"); 
         row.appendChild(child); 
     }
     document.getElementById('grid').appendChild(row); // add the row to the table
@@ -23,7 +24,8 @@ function addC() {
     rowsAll = document.querySelectorAll("tr"); // get list of all rows
     for (let i = 0; i < numRows; i++) {
         let child = document.createElement("td");
-        child.setAttribute("onclick", "changeColor(this)"); 
+        child.setAttribute("onclick", "changeColor(this)");
+        child.setAttribute("style", "background-color:White;"); 
         rowsAll[i].appendChild(child); // add column to each row
     }
     numCols += 1; // update number of columns
@@ -49,14 +51,16 @@ function removeC() {
 // Set global variable for selected color
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
-    if (colorSelected == "SELECT") {
-        colorSelected = "White";
-    }
 }
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    cellsAll = document.querySelectorAll("td");
+    for (let i = 0; i < cellsAll.length; i++) {
+        if (cellsAll[i].style.backgroundColor == "white") {
+            cellsAll[i].style.backgroundColor = colorSelected;   
+        } 
+    }
 }
 
 // Fill all cells
