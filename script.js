@@ -5,7 +5,19 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    let table = document.getElementById('grid'); // table reference
+    var row = table.insertRow(0); // insert a row into the html
+    numRows++; // add 1 to the global variable numRows
+    if(numCols == 0){ // if Column is zero then add a new cell at 0 and add 1 to the global variable numCols
+        var cell = row.insertCell(0);
+        cell.innerHTML = " ";
+        numCols++;
+    }else{
+        for(var i = 0; i <numCols; i++){ // for however many column in the table
+            var cell = row.insertCell(i); // add as many column we have in the table
+            cell.innerHTML= " ";
+        }
+    }
 }
 
 // Add a column
