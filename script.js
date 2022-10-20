@@ -6,14 +6,17 @@ let grid = document.getElementById("grid");
 
 // Add a row
 function addR() {
-    let addRow = grid.appendChild("tr");
-    let addCell = addRow.appendChild("td");
+    let addRow = grid.appendChild(document.createElement("tr"));
+    let addCell = addRow.appendChild(document.createElement("td"));
+    if (numRows === 0){
+        numCols = 0;
+    }
 
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Co"); // Replace this line with your code.
+    alert("Clicked Add Col"); // Replace this line with your code.
 }
 
 // Remove a row
@@ -45,4 +48,8 @@ function fillAll(){
 // Clear all cells
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
+}
+
+function myOnClick(){
+    this.style.backgroundColor = colorSelected;
 }
