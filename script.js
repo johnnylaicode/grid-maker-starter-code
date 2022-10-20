@@ -10,6 +10,9 @@ function addR() {
     let addCell = addRow.appendChild(document.createElement("td"));
     if (numRows === 0){
         numCols = 0;
+        addCell.onclick = myOnclick;
+        numRows++;
+        numCols++;
     }
 
 }
