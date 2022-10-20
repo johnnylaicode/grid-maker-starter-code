@@ -2,10 +2,13 @@
 let numRows = 0;
 let numCols = 0;
 let colorSelected; 
+let grid = document.getElementById("grid");
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    let addRow = grid.appendChild("tr");
+    let addCell = addRow.appendChild("td");
+
 }
 
 // Add a column
