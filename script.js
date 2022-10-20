@@ -8,18 +8,24 @@ let grid = document.getElementById("grid");
 function addR() {
     let addRow = grid.appendChild(document.createElement("tr"));
     let addCell = addRow.appendChild(document.createElement("td"));
-    if (numRows === 0){
+    
+    /*if (numRows === 0){
         numCols = 0;
-        addCell.onclick = myOnclick;
+        addCell.onclick = myOnClick;
         numRows++;
         numCols++;
     }
+    else{
+        addCell.onclick = myOnClick;
+        
+    }*/
+        
 
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    
 }
 
 // Remove a row
