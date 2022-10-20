@@ -13,7 +13,7 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    alert("Clicked Add Co"); // Replace this line with your code.
 }
 
 // Remove a row
