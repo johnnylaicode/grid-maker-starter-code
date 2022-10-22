@@ -4,6 +4,7 @@ let numCols = 0;
 let colorSelected; 
 let grid = document.getElementById("grid");
 
+
 // Add a row
 function addR() {
     let addRow = grid.appendChild(document.createElement("tr"));
@@ -26,7 +27,6 @@ function addR() {
 // Add a column
 function addC() {
     if (numCols === 0) {
-        numRows = 0;
         grid.appendChild(document.createElement("tr")).appendChild(document.createElement("td")).onclick = myOnClick;
         numRows++;
         numCols++;
@@ -35,19 +35,18 @@ function addC() {
         for (let i = 0; i < numRows; i++) {
             grid.rows[i].appendChild(document.createElement("td")).onclick = myOnClick;
         }
-        numCols++; 
+        numCols++;
     }
 }
 
 // Remove a row
 function removeR() {
     if(numRows === 0){
-        throw new Error("No deletable rows");
+        alert("No deletable rows");
+        return 0;
     }
     grid.removeChild(grid.lastElementChild)
-    if(numRows>0){
-        numRows--;
-    }
+    numRows --;
     if(numRows === 0){
         numCols = 0;
     }
@@ -55,7 +54,22 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    if(numCols===0){
+       alert("No deletable Columns");
+       return 0;
+    }
+    for(i = 0; i < numRows; i++){
+        if (grid.rows[i].cells.length > 0) {
+            grid.rows[i].deleteCell(-1);
+        }
+    }
+    numCols--;
+    if(numCols === 0){
+        for(i = 0; i < numRows; i++){
+            grid.removeChild(grid.lastElementChild);
+        }
+        numRows = 0;
+    }
 }
 
 // Set global variable for selected color
