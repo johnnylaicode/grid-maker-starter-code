@@ -36,7 +36,6 @@ function addC() {
             grid.rows[i].appendChild(document.createElement("td")).onclick = myOnClick;
         }
         numCols++; 
-    }
 }
 
 // Remove a row
