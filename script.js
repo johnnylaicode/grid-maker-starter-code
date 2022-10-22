@@ -89,14 +89,11 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    if(grid.rows.length === 0){
-        alert("Grid is already cleared!");
-    }
     for(i = 0; i < numRows; i++){
-        grid.removeChild(grid.lastElementChild);
+        for(j = 0; j < numCols; j++){
+            grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor = "white";
+        }
     }
-    numRows = 0;
-    numCols = 0;
 }
 
 function myOnClick(){
