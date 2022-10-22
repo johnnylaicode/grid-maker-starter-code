@@ -8,8 +8,7 @@ let grid = document.getElementById("grid");
 function addR() {
     let addRow = grid.appendChild(document.createElement("tr"));
     let addCell = addRow.appendChild(document.createElement("td"));
-    
-    /*if (numRows === 0){
+    if (numRows === 0){
         numCols = 0;
         addCell.onclick = myOnClick;
         numRows++;
@@ -17,10 +16,11 @@ function addR() {
     }
     else{
         addCell.onclick = myOnClick;
-        
-    }*/
-        
-
+        for (let i = 1; i < numCols; i++) {
+            addRow.appendChild(document.createElement("td")).onclick = myOnClick;
+        }
+        numRows++;
+    }
 }
 
 // Add a column
