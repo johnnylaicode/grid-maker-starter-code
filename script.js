@@ -36,13 +36,21 @@ function addC() {
             grid.rows[i].appendChild(document.createElement("td")).onclick = myOnClick;
         }
         numCols++; 
-    } 
-    console.log("numCol:" + numCols +  " numRows: " + numRows);
+    }
 }
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    if(numRows === 0){
+        throw new Error("No deletable rows");
+    }
+    grid.removeChild(grid.lastElementChild)
+    if(numRows>0){
+        numRows--;
+    }
+    if(numRows === 0){
+        numCols = 0;
+    }
 }
 
 // Remove a column
