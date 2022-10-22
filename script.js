@@ -90,7 +90,14 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    if(grid.rows.length === 0){
+        alert("Grid is already cleared!");
+    }
+    for(i = 0; i < numRows; i++){
+        grid.removeChild(grid.lastElementChild);
+    }
+    numRows = 0;
+    numCols = 0;
 }
 
 function myOnClick(){
