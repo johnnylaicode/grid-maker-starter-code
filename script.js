@@ -25,7 +25,19 @@ function addR() {
 
 // Add a column
 function addC() {
-    
+    if (numCols === 0) {
+        numRows = 0;
+        grid.appendChild(document.createElement("tr")).appendChild(document.createElement("td")).onclick = myOnClick;
+        numRows++;
+        numCols++;
+    }
+    else {  
+        for (let i = 0; i < numRows; i++) {
+            grid.rows[i].appendChild(document.createElement("td")).onclick = myOnClick;
+        }
+        numCols++; 
+    } 
+    console.log("numCol:" + numCols +  " numRows: " + numRows);
 }
 
 // Remove a row
