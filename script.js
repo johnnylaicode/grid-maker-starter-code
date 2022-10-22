@@ -4,6 +4,7 @@ let numCols = 0;
 let colorSelected; 
 let grid = document.getElementById("grid");
 
+
 // Add a row
 function addR() {
     let addRow = grid.appendChild(document.createElement("tr"));
@@ -34,7 +35,7 @@ function addC() {
         for (let i = 0; i < numRows; i++) {
             grid.rows[i].appendChild(document.createElement("td")).onclick = myOnClick;
         }
-        numCols++; 
+        numCols++;
 }
 
 // Remove a row
