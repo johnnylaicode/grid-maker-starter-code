@@ -37,7 +37,6 @@ function addC() {
         }
         numCols++; 
     } 
-    console.log("numCol:" + numCols +  " numRows: " + numRows);
 }
 
 // Remove a row
