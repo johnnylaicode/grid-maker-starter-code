@@ -12,7 +12,7 @@ function addR() {
 
     for(let i = 0; i < numCols; ++i){
         let ele = document.createElement("td");
-        ele.setAttribute("onclick", "changeColor(this)");
+        ele.setAttribute("onclick", "colorCell(this)");
         row.append(ele)
     }
     table.appendChild(row);
@@ -30,7 +30,7 @@ function addC() {
 
     for(let i = 0; i < numRows; ++i){
         let ele = document.createElement("td");
-        ele.setAttribute("onclick", "changeColor(this)");
+        ele.setAttribute("onclick", "colorCell(this)");
         table.children[i].appendChild(ele);
     }
 
@@ -39,7 +39,9 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    numRows > 0 ? numRows-- : numCols = 0;
+    document.getElementById('grid').lastElementChild.remove();
+
 }
 
 // Remove a column
@@ -66,4 +68,8 @@ function fillAll(){
 // Clear all cells
 function clearAll(){
     alert("Clicked Clear All"); // Replace this line with your code.
+}
+
+function colorCell(cell){
+    cell.style.backgroundColor = colorSelected;
 }
