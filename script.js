@@ -46,7 +46,19 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    numCols > 0 ? numCols-- : numRows = 0;
+    let rows = document.getElementById("grid").children;
+    // rows[0].lastElementChild.remove();
+    // console.log(rows[0]);
+
+    // for(row in rows){
+    //     console.log(row);
+    //     row.lastElementChild.remove();
+    // }
+
+    for(let i = 0; i < rows.length;++i){
+        rows[i].lastElementChild.remove();
+    }
 }
 
 // Set global variable for selected color
