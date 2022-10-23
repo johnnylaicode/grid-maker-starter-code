@@ -5,12 +5,23 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    let table = document.getElementById("grid");
+    numCols === 0? numCols++ : numCols;
+    numRows++;
+    let row = document.createElement("tr");
+
+    for(let i = 0; i < numCols; ++i){
+        let ele = document.createElement("td");
+        ele.setAttribute("onclick", "changeColor(this)");
+        row.append(ele)
+    }
+    table.appendChild(row);
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    let table = document.getElementById("grid");
+    numRows === 0? numRows++: numRows;
 }
 
 // Remove a row
