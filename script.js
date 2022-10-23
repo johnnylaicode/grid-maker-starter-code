@@ -21,7 +21,20 @@ function addR() {
 // Add a column
 function addC() {
     let table = document.getElementById("grid");
-    numRows === 0? numRows++: numRows;
+    numCols++;
+    if(numRows === 0){
+        ++numRows;
+        let row = document.createElement("tr");
+        table.appendChild(row);
+    }
+
+    for(let i = 0; i < numRows; ++i){
+        let ele = document.createElement("td");
+        ele.setAttribute("onclick", "changeColor(this)");
+        table.children[i].appendChild(ele);
+    }
+
+
 }
 
 // Remove a row
