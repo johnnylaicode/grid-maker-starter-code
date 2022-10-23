@@ -8,14 +8,17 @@ function addR() {
     let table = document.getElementById("grid");
     numCols = numCols === 0? 1 : numCols;
     numRows++;
+    //create row
     let row = document.createElement("tr");
 
+    //add appropriate num of cols
     for(let i = 0; i < numCols; ++i){
         let ele = document.createElement("td");
         ele.setAttribute("onclick", "colorCell(this)");
         ele.style.backgroundColor = "white";
         row.append(ele)
     }
+    //add to table
     table.appendChild(row);
 }
 
@@ -23,12 +26,14 @@ function addR() {
 function addC() {
     let table = document.getElementById("grid");
     numCols++;
+    //if table is empty, create a row
     if(numRows === 0){
         ++numRows;
         let row = document.createElement("tr");
         table.appendChild(row);
     }
 
+    //loop through all rows and add a new cell at the end
     for(let i = 0; i < numRows; ++i){
         let ele = document.createElement("td");
         ele.setAttribute("onclick", "colorCell(this)");
@@ -41,7 +46,6 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    console.log("removeR" + numRows.toString());
     numRows > 0 ? numRows-- : numCols = 0;
     document.getElementById('grid').lastElementChild.remove();
 
@@ -49,7 +53,6 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    console.log("removeC" + numCols.toString());
     let rows = document.getElementById("grid").children;
     // rows[0].lastElementChild.remove();
     // console.log(rows[0]);
@@ -58,10 +61,12 @@ function removeC() {
     //     console.log(row);
     //     row.lastElementChild.remove();
     // }
-
+    //remove cell at the end of each row
     for(let i = 0; i < rows.length;++i){
         rows[i].lastElementChild.remove();
     }
+
+    //remove extraneous rows if empty
     if(numCols == 1){
         let grid = document.getElementById("grid");
         for(let i = 0; i < numRows; i++){
@@ -83,7 +88,7 @@ function selectColor(){
 // Fill all uncolored cells
 function fillU(){
     let rows = document.getElementById("grid").children;
-
+    //loop through all cells and fill if color is currently white
     for(let i = 0; i < rows.length; ++i){
         let elems = rows[i].children;
         for(let j = 0; j < elems.length; ++j){
