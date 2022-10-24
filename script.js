@@ -7,6 +7,7 @@ let grid = document.getElementById("grid");
 
 // Add a row
 function addR() {
+    alert("clicked");
     let addRow = grid.appendChild(document.createElement("tr"));
     let addCell = addRow.appendChild(document.createElement("td"));
     if (numRows === 0){
@@ -26,6 +27,7 @@ function addR() {
 
 // Add a column
 function addC() {
+    alert("clicked");
     if (numCols === 0) {
         grid.appendChild(document.createElement("tr")).appendChild(document.createElement("td")).onclick = myOnClick;
         numRows++;
