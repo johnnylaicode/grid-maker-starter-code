@@ -80,8 +80,8 @@ function selectColor() {
 function fillU() {
     for (let i = 0; i < numRows; i++) {
         for (let j = 0; j < numCols; j++) {
-            if (grid.querySelectorAll("tr")[i].grid.querySelectorAll("td")[j].style.backgroundColor === "" || elements.querySelectorAll("tr")[i].elements.querySelectorAll("td")[j].style.backgroundColor === "white") {
-                grid.querySelectorAll("tr")[i].grid.querySelectorAll("td")[j].style.backgroundColor = colorSelected;
+            if (grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor === "" || grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor === "white") {
+                grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor = colorSelected;
             }
         }
     }
