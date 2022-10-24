@@ -85,7 +85,11 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    for(i = 0; i < numRows; i++){
+        for(j = 0; j < numCols; j++){
+            grid.querySelectorAll("tr")[i].querySelectorAll("td")[j].style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 // Clear all cells
