@@ -5,7 +5,7 @@ This repository is the starter code for Assignment 3 - Grid Maker.
 [Website link](https://johnnylaicode.github.io/grid-maker-starter-code/)
 
 ----------
-### 1. Use the following process to ***import*** the assignment repository to your GitHub account as the starter codebase
+### 1. Use the following process to ***import*** the Assignment 3 starter code repository to your GitHub account as the starter codebase
 1.	Log on to GitHub
 2.	Click on the + sign in the top right corner (next to the user icon)
 3.	In the dropdown menu, select "Import repository"
