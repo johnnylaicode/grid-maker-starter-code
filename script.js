@@ -23,6 +23,18 @@ function removeC() {
     alert("Clicked Remove Col"); // Replace this line with your code.
 }
 
+function colorSingleCell(row, col) {
+    //colorSelected === "SELECT" is for if the user switches from a color back to the select option
+    if (colorSelected === "SELECT" || !colorSelected) {
+        alert("Select a color first!");
+    } else {
+        //Cell with the row and col data attributes
+        let cell = document.querySelector(`td[row="${row}"][col="${col}"]`);
+        cell.style.backgroundColor = colorSelected;
+    }
+}
+
+
 // Set global variable for selected color
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
