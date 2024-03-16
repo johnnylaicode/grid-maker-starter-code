@@ -15,7 +15,20 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    //Rows exist
+    if (numRows > 0) {
+        grid.deleteRow(-1);
+        numRows--;
+
+        // Reset numCols since no more cells at all
+        if (numRows == 0) {
+            numCols = 0;
+        }
+    }
+
+    //Table has no rows
+    else
+        alert("Clicked Remove Row, No rows to remove!");
 }
 
 // Remove a column
