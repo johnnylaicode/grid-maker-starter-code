@@ -46,7 +46,7 @@ function fillU(){
     if (colorSelected === "SELECT" || !colorSelected) {
         alert("Select a color first!");
     } else {
-        for (let i=0;i<all_cells.length;i++) {
+        for (let i=0; i<all_cells.length; i++) {
             let cell = all_cells[i];
             if (cell.style.backgroundColor === "") {
                 cell.style.backgroundColor = colorSelected;
@@ -58,8 +58,17 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    //colorSelected === "SELECT" is for if the user switches a color
+    if (colorSelected === "SELECT" || !colorSelected) {
+        alert("Select a color first!");
+    } else {
+        for (let i=0; i<all_cells.length; i++) {
+            let cell = all_cells[i];
+            cell.style.backgroundColor = colorSelected;
+        }
+    }
 }
+
 
 // Clear all cells
 function clearAll(){
