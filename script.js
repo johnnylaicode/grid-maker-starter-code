@@ -57,16 +57,22 @@ function fillU(){
 
 
 // Fill all cells
-function fillAll(){
-    //colorSelected === "SELECT" is for if the user switches a color
-    if (colorSelected === "SELECT" || !colorSelected) {
-        alert("Select a color first!");
-    } else {
-        for (let i=0; i<all_cells.length; i++) {
-            let cell = all_cells[i];
-            cell.style.backgroundColor = colorSelected;
-        }
-    }
+function fillAll() {
+  if (selectedColor === "SELECT") {
+    // Provide a gentler message to the user
+    displayStatusMessage("Please choose a color first.");
+    return; // Exit the function early
+  }
+
+  // Optional: Validate that selectedColor is a valid CSS color
+
+  fillCells(selectedColor);
+}
+
+function fillCells(color) {
+  for (let i = 0; i < gridCells.length; i++) { 
+    gridCells[i].style.backgroundColor = color;
+  }
 }
 
 
