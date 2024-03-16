@@ -43,8 +43,18 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    if (colorSelected === "SELECT" || !colorSelected) {
+        alert("Select a color first!");
+    } else {
+        for (let i=0;i<all_cells.length;i++) {
+            let cell = all_cells[i];
+            if (cell.style.backgroundColor === "") {
+                cell.style.backgroundColor = colorSelected;
+            }
+        }
+    }
 }
+
 
 // Fill all cells
 function fillAll(){
